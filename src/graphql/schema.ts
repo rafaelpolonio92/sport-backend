@@ -10,7 +10,7 @@ export const Schema = gql`
   }
 
   type Query {
-    getAllTricks: String
-    getTrickById(id: ID!): String
+    getAllTricks: [Trick]
+    getTrickById(id: ID!): Trick
   }
 `

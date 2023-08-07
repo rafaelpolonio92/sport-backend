@@ -3,6 +3,7 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { Schema, Resolvers } from './graphql';
 import { AppDataSource } from './data-source';
+import { Trick } from './entity'
 
 const startServer = async (schema: any, resolvers: any): Promise<void> => {
   const app = express();

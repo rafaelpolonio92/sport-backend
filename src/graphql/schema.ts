@@ -6,10 +6,11 @@ export const Schema = gql`
     name: String
     description: String
     videoUrl: String
+    imageUrl: String
   }
 
   type Query {
     getAllTricks: String
-    getTrick(id: ID!): String
+    getTrickById(id: ID!): String
   }
 `

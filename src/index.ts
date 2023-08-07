@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { Schema, Resolvers } from './graphql';
+import { AppDataSource } from './data-source';
 
 const startServer = async (schema: any, resolvers: any): Promise<void> => {
   const app = express();
@@ -13,7 +14,9 @@ const startServer = async (schema: any, resolvers: any): Promise<void> => {
 
   await server.start();
   server.applyMiddleware({ app });
-  
+  AppDataSource.initialize().then(() => {
+    console.log('Database connected')
+  }).catch((error) => console.log(error));
   const PORT = 4000;
   
   app.listen({ port: PORT }, () => {

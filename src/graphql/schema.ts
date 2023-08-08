@@ -2,7 +2,7 @@ import { gql } from "apollo-server-express";
 
 export const Schema = gql`
   type Trick {
-    id: ID!
+    id: String!
     name: String
     description: String
     videoUrl: String
@@ -11,6 +11,6 @@ export const Schema = gql`
 
   type Query {
     getAllTricks: [Trick]
-    getTrickById(id: ID!): Trick
+    getTrickById(id: String): Trick
   }
 `

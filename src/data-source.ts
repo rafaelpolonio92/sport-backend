@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import { DataSource } from 'typeorm';
-import { Trick } from './entity';
+import { Trick, User } from './entities';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -12,7 +12,8 @@ export const AppDataSource = new DataSource({
   logging: false,
   synchronize: true,
   entities: [
-    Trick
+    Trick,
+    User
   ],
   migrations: [
     'dist/migrations/**/*.js',
